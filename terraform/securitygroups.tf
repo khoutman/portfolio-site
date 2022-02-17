@@ -9,6 +9,7 @@ resource "aws_security_group" "worker_group_mgmt_one" {
 
     cidr_blocks = [
       "10.0.0.0/8",
+      "68.250.113.180/32",
     ]
   }
 }
@@ -24,6 +25,7 @@ resource "aws_security_group" "worker_group_mgmt_two" {
 
     cidr_blocks = [
       "192.168.0.0/16",
+      "68.250.113.180/32",
     ]
   }
 }
@@ -45,17 +47,3 @@ resource "aws_security_group" "all_worker_mgmt" {
   }
 }
 
-resource "aws_security_group" "ssh_home" {
-  name_prefix = "ssh_home"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "68.250.113.180/32",
-    ]
-  }
-}
