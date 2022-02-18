@@ -25,6 +25,13 @@ terraform {
       version = ">= 2.0.1"
     }
   }
+  cloud {
+    organization = "khoutman"
+
+    workspaces {
+      name = "portfolio-site-workflow"
+    }
+  }
 
   required_version = ">= 0.14"
 }
