@@ -15,7 +15,7 @@ data "aws_vpc" "application-vpc" {
   }
 }
 
-data "aws_subnet" "kubernetes-test-dotty-public-subnet" {
+data "aws_subnet" "kubernetes-test-public-subnet" {
   tags = {
     Name = "kubernetes-test-public-subnet"
   }
