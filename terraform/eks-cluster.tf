@@ -6,9 +6,7 @@ module "kyle-oakley-eks-cluster" {
   cluster_name = local.cluster_name
   cluster_version = "1.21"
   vpc_id = module.vpc.vpc_id
-  subnets = [
-    module.vpc.public_subnets
-  ]
+  subnets = module.vpc.public_subnets
 
   workers_group_defaults = {
     root_volume_type = "gp2"
