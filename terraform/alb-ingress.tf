@@ -1,6 +1,5 @@
 module "alb_controller" {
   source  = "git::https://github.com/GSA/terraform-kubernetes-aws-load-balancer-controller?ref=v4.3.0gsa"
-  version = "3.4.0"
 
   providers = {
     kubernetes = "kubernetes.eks",
