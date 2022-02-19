@@ -96,8 +96,8 @@ resource "kubernetes_deployment" "alb-ingress-controller" {
           args = [
             "--ingress-class=alb",
             "--cluster-name=${local.cluster_name}",
-            "--aws-vpc-id=${data.aws_vpc.application-vpc.id}",
-            "--aws-region=us-east-1"
+            "--aws-vpc-id=${module.vpc.vpc_id}",
+            "--aws-region=us-east-2"
           ]
         }
 
