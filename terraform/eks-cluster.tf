@@ -5,10 +5,9 @@ module "kyle-oakley-eks-cluster" {
   create_eks = true
   cluster_name = local.cluster_name
   cluster_version = "1.21"
-  vpc_id = data.aws_vpc.application-vpc.id
+  vpc_id = module.vpc.vpc_id
   subnets = [
-    data.aws_subnet.kubernetes-public-subnet.id,
-    data.aws_subnet.kubernetes-test-public-subnet.id
+    module.vpc.public_subnets
   ]
 
   workers_group_defaults = {
